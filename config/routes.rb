@@ -1,6 +1,7 @@
 FollowerSearch::Application.routes.draw do
 
   resources :followers
+  resources :tweets
 
   root 'static_pages#home'
 

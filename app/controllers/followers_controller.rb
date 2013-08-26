@@ -11,7 +11,7 @@ class FollowersController < ApplicationController
         user_id: current_user.id
       )
     end
-    redirect_to action: 'index'
+    redirect_to new_tweet_path
   end
 
   def index
