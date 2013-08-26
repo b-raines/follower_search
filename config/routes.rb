@@ -1,10 +1,13 @@
 FollowerSearch::Application.routes.draw do
 
+  resources :followers
+
   root 'static_pages#home'
 
   match 'auth/twitter/callback', to: 'sessions#create', via: 'get'
   match 'auth/failure', to: redirect('/'), via: 'get'
   match 'signout', to: 'sessions#destroy', as: 'signout', via: 'get'
+  match 'followers', to: 'followers#index', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
