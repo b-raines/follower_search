@@ -10,7 +10,8 @@ class TweetsController < ApplicationController
       current_tweets.each do |tweet|
         tweet_ids << tweet.tid
       end
-      Twitter.user_timeline(name, since_id: tweet_ids.max).each do |status|
+      max_id = tweet_ids.max
+      Twitter.user_timeline(name, since_id: max_id).each do |status|
         Tweet.find_or_create_by_tid(
           tid: status.id,
           content: status.full_text,
