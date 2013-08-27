@@ -12,8 +12,8 @@ class TweetsController < ApplicationController
       end
       max_id = tweet_ids.max
       Twitter.user_timeline(name, since_id: max_id).each do |status|
-        Tweet.find_or_create_by_tid(
-          tid: status.id,
+        Tweet.create(
+          tid: status.id.to_s,
           content: status.full_text,
           follower_id: id
         )

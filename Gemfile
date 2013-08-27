@@ -10,10 +10,10 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'twitter'
 gem 'omniauth-twitter'
+gem 'pg'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
@@ -55,7 +55,6 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
