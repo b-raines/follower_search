@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :followers
+  has_many :tweets, through: :followers
   
   def self.from_omniauth(auth)
     user = where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)

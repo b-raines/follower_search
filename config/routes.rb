@@ -9,6 +9,7 @@ FollowerSearch::Application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: 'get'
   match 'signout', to: 'sessions#destroy', as: 'signout', via: 'get'
   match 'followers', to: 'followers#index', via: 'get'
+  match 'trends', to: 'trends#index', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

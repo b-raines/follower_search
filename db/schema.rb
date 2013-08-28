@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130826223758) do
+ActiveRecord::Schema.define(version: 20130827171826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "followers", force: true do |t|
-    t.string   "user_id"
     t.string   "fid"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tweets", force: true do |t|
-    t.string   "follower_id"
     t.string   "tid"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "follower_id"
   end
 
   create_table "users", force: true do |t|

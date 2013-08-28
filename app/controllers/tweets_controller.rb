@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
         )
       end
     end
-
+    redirect_to trends_path
   end
 
   def get_followers
