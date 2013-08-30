@@ -11,6 +11,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'pg'
+gem 'sidekiq'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

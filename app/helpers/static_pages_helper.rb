@@ -5,7 +5,7 @@ module StaticPagesHelper
     base_filter = %w[i if you do he she they them it us we and my mine your yours him 
              her his hers know how use dont do not the theirs their there for 
              our is as a of in on around at to this and are where from more
-             no one some out every that with arent got off rt be have about will
+             no one some out every that thats with arent got off rt be have about will
              what just its all day so but can go or were see when without youre
              here than into much over cant should pass has as was get put via let]
 
