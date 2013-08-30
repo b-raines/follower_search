@@ -1,3 +1,7 @@
-<% if current_user %>
-	<%= link_to "Get Started", new_follower_path %>
+<%if current_user %>
+  <ol>
+    <% @trending.each do |trend, count| %>
+      <li><%= trend %>, <%= count %></li>
+    <% end %>
+  </ol>
 <% end %>

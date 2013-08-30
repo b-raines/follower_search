@@ -1,47 +1,31 @@
 class TweetsController < ApplicationController
 
-  before_action :get_followers
-  before_action :clean_up
+  before_action :delete_old_tweets
 
-  def new
-    
-    @followers.each do |id, name|
-      current_tweets = Follower.find(id).tweets
-      tweet_ids = Array.new(2, "1")
-      current_tweets.each do |tweet|
-        tweet_ids << tweet.tid
-      end
-      max_id = tweet_ids.max
-      if max_id > "1"
-        statuses = Twitter.search(name, since_id: max_id).attrs[:statuses]
-        statuses.each do |status|
-          Tweet.create(
+  def create
+    current_user.followers.each do |follower|
+      max_tweet_id = follower.tweets.map {|tweet| tweet.tid }.max || '1'
+      if max_tweet_id > '1'
+        Twitter.search(follower.name, since_id: max_tweet_id).attrs[:statuses].each do |status|
+          follower.tweets.build(
             tid: status[:id_str],
-            content: status[:text],
-            follower_id: id
+            content: status[:text]
           )
         end
       else
-        Twitter.user_timeline(name).each do |status|
-          Tweet.create(
+        Twitter.user_timeline(follower.name).each do |status|
+          follower.tweets.build(
             tid: status.id.to_s,
-            content: status.full_text,
-            follower_id: id
+            content: status.full_text
           )
         end
       end
+      follower.save
     end
-    redirect_to trends_path
+    redirect_to action: 'static_pages#home'
   end
 
-  def get_followers
-    @followers = {}
-    current_user.followers.each do |follower|
-      @followers[follower.id] = follower.name
-    end
-  end
-
-  def clean_up
+  def delete_old_tweets
     Tweet.where("created_at < ?", 7.days.ago).delete_all
   end
 
