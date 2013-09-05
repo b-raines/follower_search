@@ -8,11 +8,19 @@
 </head>
 <body>
 
+	<header>
 		<%= render 'layouts/header' %>
+	</header>
 
 	<div id = "wrapper">
 		<%= yield %>
 	</div>
+
+	<% if current_user %>
+		<footer>
+			<%= render 'layouts/footer' %>
+		</footer>
+	<% end %>
 
 </body>
 </html>

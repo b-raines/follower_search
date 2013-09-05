@@ -61,35 +61,38 @@ header {
 
 #signin {
   position: relative;
+  top: 2.2em;
 	float: right;
-  right: 1%;
+  margin: 0 0.5em;
   a {
+    margin-left: 1em;
     color: #fff;
     &:hover {
-      color: #005;
+      color: #000;
       text-decoration: none;
     }
   }
-}
-
-.button_to {
-  position: relative;
-  bottom: 0.5em;
-	display: inline-block;
-	margin: 1% 2%;
 }
 
 /* body */
 
 #wrapper {
 	width: 90%;
-	margin: 0 auto;
+  min-height: 85%;
+  overflow: hidden;
+  position: relative;
+  color: #000;
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  display: block;
 }
 
 #trends {
-  width: 100%;
+  width: 95%;
   height: auto;
   background-color: #eee;
+  margin: 1% auto 10%;
   @include box-shadow(0 0 0.4em #000);
   tr:hover {
     background-color: rgba(#828793, 0.8);
@@ -122,3 +125,22 @@ header {
   color: #204;
 }
 
+/* footer */
+
+footer {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 2em;
+  right: 2.5%;
+  text-align: center;
+  div {
+    display: inline-block;
+    padding: 0 2em;
+  }
+}
+
+.button_to {
+  display: inline;
+}

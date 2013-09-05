@@ -1,5 +1,9 @@
 module StaticPagesHelper
 
+  def any_tweets?
+    current_user.tweets?
+  end
+
   def find_trends
     get_topics_and_names
     sort_topics_and_names
@@ -51,6 +55,6 @@ module StaticPagesHelper
     trends = counts.sort_by {|k,v| v}.reverse
     @hot_trends = trends[0..4]
     @warm_trends = trends[5..9]
-    @cold_trends = trends[10..19]
+    @cold_trends = trends[10..24]
   end
 end

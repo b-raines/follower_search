@@ -1,4 +1,4 @@
-<%if current_user %>
+<%if current_user && current_user.tweets.all.count > 0 %>
   <table id = "trends">
   	<tr>
   		<th>Topic</th>
