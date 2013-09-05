@@ -78,7 +78,6 @@ header {
 
 #wrapper {
 	width: 90%;
-  min-height: 85%;
   overflow: hidden;
   position: relative;
   color: #000;
@@ -92,7 +91,7 @@ header {
   width: 95%;
   height: auto;
   background-color: #eee;
-  margin: 1% auto 10%;
+  margin: 1% auto;
   @include box-shadow(0 0 0.4em #000);
   tr:hover {
     background-color: rgba(#828793, 0.8);
@@ -100,7 +99,7 @@ header {
   th {
     background-color: #eee;
     text-align: left;
-    font-family: serif;
+    font-family: sans-serif;
     font-size: 2em;
     padding: 0.3em 0.4em;
     border-bottom: 0.2em solid black;
@@ -110,37 +109,22 @@ header {
   }
 }
 
-.hot {
-  font-size: 1.6em;
-  color: #c00;
-  text-shadow: 0 0 0.04em #000;
-}
-
-.warm {
-  font-size: 1.3em;
-  color: #602;
-}
-
-.cold {
-  color: #204;
+@for $i from 1 through 25 {
+  .trend-#{$i} {
+    font-size: $i/100 * 4 + 1em;
+    color: rgb($i*10, 0, 0);
+  }
 }
 
 /* footer */
 
 footer {
-  width: 95%;
-  height: auto;
+  width: 90%;
   margin: 0 auto;
-  position: absolute;
-  bottom: 2em;
-  right: 2.5%;
   text-align: center;
-  div {
-    display: inline-block;
-    padding: 0 2em;
-  }
 }
 
 .button_to {
-  display: inline;
+  display: inline-block;
+  margin: 2em;
 }

@@ -53,8 +53,6 @@ module StaticPagesHelper
     counts = Hash.new(0)
     @topics.each { |topic| counts[topic] += 1 }
     trends = counts.sort_by {|k,v| v}.reverse
-    @hot_trends = trends[0..4]
-    @warm_trends = trends[5..9]
-    @cold_trends = trends[10..24]
+    @trending = trends[0..24]
   end
 end
