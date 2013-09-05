@@ -113,6 +113,7 @@ header {
   .trend-#{$i} {
     font-size: $i/100 * 4 + 1em;
     color: rgb($i*10, 0, 0);
+    background-color: rgb($i*2.5+180, $i*2.5+180, $i*2.5+180);
   }
 }
 
