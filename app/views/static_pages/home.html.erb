@@ -1,7 +1,26 @@
 <%if current_user %>
-  <ol>
-    <% @trending.each do |trend, count| %>
-      <li><%= trend %>, <%= count %></li>
+  <table id = "trends">
+  	<tr>
+  		<th>Topic</th>
+  		<th>Count</th>
+  	</tr>
+    <% @hot_trends.each do |trend, count| %>
+    	<tr>
+      	<td class = "hot"><%= trend %></td>
+      	<td class = "hot"><%= count %></td>
+      </tr>
+    <% end %>
+    <% @warm_trends.each do |trend, count| %>
+      <tr>
+        <td class = "warm"><%= trend %></td>
+        <td class = "warm"><%= count %></td>
+      </tr>
+    <% end %>
+    <% @cold_trends.each do |trend, count| %>
+      <tr>
+        <td class = "cold"><%= trend %></td>
+        <td class = "cold"><%= count %></td>
+      </tr>
     <% end %>
   </ol>
 <% end %>

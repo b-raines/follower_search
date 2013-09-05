@@ -8,16 +8,11 @@
 </head>
 <body>
 
-	<% if current_user %>
-		Signed in as <%= current_user.name %>
-		<%= link_to "Sign out", signout_path %>
-		<%= button_to "Update my followers", new_follower_path %>
-		<%= button_to "Get new trends", new_tweet_path %>
-	<% else %>
-		<%= link_to  "Sign in with Twitter", "/auth/twitter" %>
-	<% end %>
+		<%= render 'layouts/header' %>
 
-<%= yield %>
+	<div id = "wrapper">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

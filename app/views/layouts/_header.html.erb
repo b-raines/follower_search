@@ -1,0 +1,17 @@
+<header>
+	<h1 id = "logo">Follower Trends</h1>
+	<% if current_user %>
+		<div id = "signin">
+			<p class = "status">
+				Signed in as <em><%= current_user.name %></em>
+			</p>
+			<%= link_to "Sign out", signout_path %>
+		</div>
+			<%= button_to "Update my followers", new_follower_path %>
+			<%= button_to "Get new trends", new_tweet_path %>
+	<% else %>
+		<div id = "signin">
+			<%= link_to  "Sign in with Twitter", "/auth/twitter" %>
+		</div>
+	<% end %>
+</header>

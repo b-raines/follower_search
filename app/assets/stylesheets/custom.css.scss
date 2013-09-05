@@ -1,0 +1,124 @@
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #ddd;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  height: 4em;
+	margin-bottom: 2%;
+	background: rgba(#828793, 0.8);
+	@include box-shadow(inset 0 0 0.5em #000);
+  em {
+    font-weight: bold;
+  }
+}
+
+.status {
+  margin: 0;
+}
+
+#logo {
+  display: inline-block;
+  margin: 0.2em;
+  text-shadow: -0.01em -0.01em 0.1em #ccc;
+}
+
+#signin {
+  position: relative;
+	float: right;
+  right: 1%;
+  a {
+    color: #fff;
+    &:hover {
+      color: #005;
+      text-decoration: none;
+    }
+  }
+}
+
+.button_to {
+  position: relative;
+  bottom: 0.5em;
+	display: inline-block;
+	margin: 1% 2%;
+}
+
+/* body */
+
+#wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#trends {
+  width: 100%;
+  height: auto;
+  background-color: #eee;
+  @include box-shadow(0 0 0.4em #000);
+  tr:hover {
+    background-color: rgba(#828793, 0.8);
+  }
+  th {
+    background-color: #eee;
+    text-align: left;
+    font-family: serif;
+    font-size: 2em;
+    padding: 0.3em 0.2em;
+    border-bottom: 0.2em solid black;
+  }
+  td {
+    padding: 0.2em;
+  }
+}
+
+.hot {
+  font-size: 1.6em;
+  color: #c00;
+  text-shadow: 0 0 0.04em #000;
+}
+
+.warm {
+  font-size: 1.3em;
+  color: #602;
+}
+
+.cold {
+  color: #204;
+}
+
