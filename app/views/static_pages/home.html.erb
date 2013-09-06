@@ -1,12 +1,12 @@
 <%if current_user && current_user.tweets.all.count > 0 %>
   <table id = "trends">
-  	<tr>
-  		<th>Topic</th>
-  		<th>Count</th>
+  	<tr id = "table-head">
+  		<th>topic</th>
+  		<th>count</th>
   	</tr>
     <% i = 25 %>
     <% @trending.each do |trend, count| %>
-    	<tr>
+    	<tr class = "table-topics">
       	<td class = <%= "trend-#{i}" %>><%= trend %></td>
       	<td class = <%= "trend-#{i}" %>><%= count %></td>
         <% i -= 1 %>
