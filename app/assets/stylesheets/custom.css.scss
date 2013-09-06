@@ -43,7 +43,7 @@ header {
   width: 100%;
   height: 4.5em;
 	margin-bottom: 2%;
-	background: rgba(#828793, 0.8);
+	background-color: #666;
 	@include box-shadow(inset 0 0 0.5em #000);
   em {
     font-weight: bold;
@@ -94,7 +94,8 @@ header {
 #trends {
   width: 95%;
   height: auto;
-  @include gradient(#eee, #a5a5a5);
+  @include gradient(#f9f9f9, #999);
+  opacity: 0.8;
   margin: 1% auto;
   @include box-shadow(0 0 0.4em #000);
   th {
@@ -112,8 +113,7 @@ header {
 @for $i from 1 through 25 {
   .trend-#{$i} {
     font-size: $i/100 * 4 + 1em;
-    color: rgb($i*5, 0, $i);
-    //background-color: rgb($i*2+191, $i*2+190, $i*2+192);
+    color: rgb(50-$i*2, 50-$i*2, 50-$i*2);
     padding: 0.2em 0.5em 0.2em;
   }
 }
@@ -121,7 +121,8 @@ header {
 .table-topics {
   @include transition(all 0.2s ease-in-out);
   &:hover {
-    background-color: rgba(#828793, 0.8);
+    @include gradient(#aaa, #555);
+    @include box-shadow(inset 0 0 0.2em #fff);
   }
 }
 
