@@ -247,7 +247,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
-  bootstrap-sass (= 2.3.2.0)
+  bootstrap-sass
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)
   childprocess (= 0.3.9)
