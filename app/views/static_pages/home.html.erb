@@ -6,7 +6,7 @@
   	</tr>
     <% i = 25 %>
     <% @trending.each do |trend, count| %>
-    	<tr class = "table-topics">
+    	<tr class = <%= "table-topics-#{i}" %>>
       	<td class = <%= "trend-#{i}" %>><%= trend %></td>
       	<td class = <%= "trend-#{i}" %>><%= count %></td>
         <% i -= 1 %>

@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
       @follower = follower
       TweetsWorker.perform_async(@follower.id)
     end
+    flash[:info] = "Requesting information from Twitter."
     redirect_to action: 'static_pages#home'
   end
 
