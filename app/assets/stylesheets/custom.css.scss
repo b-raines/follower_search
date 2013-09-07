@@ -126,7 +126,7 @@ header {
 @for $i from 1 through 25 {
   .table-topics-#{$i} {
     &:hover {
-      @include gradient(rgb($i*5+125, 125, 250-$i*5), rgb($i*10, 5, 255-$i*10));
+      @include gradient(rgb($i*5+125, 125, 250-$i*5), rgb($i*7+80, 80, 255-$i*7));
     }
   }
 }
